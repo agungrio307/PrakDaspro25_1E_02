@@ -12,7 +12,7 @@ public class Triangle02 {
         n = agung.nextInt();
 
         while (i <= n) {
-            int j = 1;
+            int j = 0;
             while (j < i) {
                 System.out.print("*");
 
