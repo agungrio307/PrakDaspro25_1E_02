@@ -6,6 +6,7 @@ public class NilaiKelompok02 {
 
         int nilai02;
         double rataNilai = 0;
+        double rata_rataTertinggi = 0;
 
         Scanner agung = new Scanner(System.in);
 
@@ -22,8 +23,8 @@ public class NilaiKelompok02 {
             }
 
             System.out.println("Kelompok " +i+ " : nilai rata rata = " + rataNilai);
-
             i++;
+
         }
     }
 }
