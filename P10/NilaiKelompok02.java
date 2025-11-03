@@ -5,8 +5,9 @@ public class NilaiKelompok02 {
     public static void main(String[] args) {
 
         int nilai02;
-        double rataNilai = 0;
-        double rata_rataTertinggi = 0;
+        double rataNilai02 = 0;
+        double rata_rataTertinggi02 = 0;
+        int KelompokTertinggi02 = 0;
 
         Scanner agung = new Scanner(System.in);
 
@@ -18,13 +19,23 @@ public class NilaiKelompok02 {
             System.out.print(" Nilai dari kelompok Penilai " + j + " : ");
             nilai02 = agung.nextInt();
             totalNilai += nilai02;
-            rataNilai = totalNilai/5;
+            rataNilai02 = totalNilai/5;
 
             }
 
-            System.out.println("Kelompok " +i+ " : nilai rata rata = " + rataNilai);
+            System.out.println("Kelompok " +i+ " : nilai rata rata = " + rataNilai02);
+            System.out.println(); //0
+
+            if (rataNilai02 > rata_rataTertinggi02) {
+                rata_rataTertinggi02 = rataNilai02;
+                KelompokTertinggi02 = i;
+            }
+
             i++;
 
         }
+
+        System.out.println("Kelompok " + KelompokTertinggi02 + " memiliki nilai rata-rata tertinggi");
+        System.out.println("Dengan nilai yaitu " + rata_rataTertinggi02);
     }
 }
