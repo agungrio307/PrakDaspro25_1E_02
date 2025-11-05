@@ -1,0 +1,20 @@
+package P11;
+import java.util.Scanner;
+
+public class ArrayNilai02 {
+    public static void main(String[] args) {
+        
+        Scanner agung = new Scanner(System.in);
+
+        int[] nilaiAkhir02 = new int[10];
+
+        for (int i = 0; i < 10; i++) {
+            System.out.print("Masukkan nilai akhir ke-" + i + " : ");
+            nilaiAkhir02[i] = agung.nextInt();
+        }
+
+        for (int i = 0; i < 10; i++) {
+            System.out.println("Nilai akhir ke-" + i + "adalah " + nilaiAkhir02[i]);
+        }
+    }
+}
