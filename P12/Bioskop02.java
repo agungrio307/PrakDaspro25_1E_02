@@ -18,5 +18,11 @@ public class Bioskop02 {
         System.out.printf("%s \t %s \n", penonton02[1][0], penonton02 [1][1]);
         System.out.printf("%s \t %s \n", penonton02[2][0], penonton02 [2][1]);
         System.out.printf("%s \t %s \n", penonton02[3][0], penonton02 [3][1]);
+
+        System.out.println(penonton02.length);
+        System.out.println(penonton02[0].length);
+        System.out.println(penonton02[1].length);
+        System.out.println(penonton02[2].length);
+        System.out.println(penonton02[3].length);
     }
 }
