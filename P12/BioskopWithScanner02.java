@@ -35,11 +35,12 @@ public class BioskopWithScanner02 {
                 
                 
                 if (baris02 < 1 || baris02 > 4 || kolom02 < 1 || kolom02 > 2) {
-                    System.out.println("Maaf, kursi yang anda pilih tidak valid");
-                    continue;
+                    System.out.println("Maaf, kursi yang anda pilih tidak tersedia");
+                } else if (penonton02[baris02-1][kolom02-1] != null ) {
+                    System.out.println("Maaf, Kursi sudah di tempati oleh " + penonton02[baris02-1][kolom02-1]);
+                } else {
+                    penonton02[baris02-1][kolom02-1] = nama02;
                 }
-
-                penonton02[baris02-1][kolom02-1] = nama02;
 
             } else if (menu02 == 2) {
                 System.out.println("==== Daftar Penonton ====");
