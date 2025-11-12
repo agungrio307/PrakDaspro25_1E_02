@@ -33,6 +33,12 @@ public class BioskopWithScanner02 {
                 System.out.print("Masukkan kolom : ");
                 kolom02 = agung.nextInt();
                 
+                
+                if (baris02 < 1 || baris02 > 4 || kolom02 < 1 || kolom02 > 2) {
+                    System.out.println("Maaf, kursi yang anda pilih tidak valid");
+                    continue;
+                }
+
                 penonton02[baris02-1][kolom02-1] = nama02;
 
             } else if (menu02 == 2) {
