@@ -6,31 +6,52 @@ public class BioskopWithScanner02 {
         
         Scanner agung = new Scanner(System.in);
         
-        String nama02;
-        String next02;
-        int baris02;
-        int kolom02;
-
+        int menu02;
 
         String penonton02[][] = new String[4][2];
 
+        System.out.println("==== Daftar Menu ====");
+        System.out.println("Menu 1 = Input data penonton");
+        System.out.println("Menu 2 = Tampilkan daftar penonton");
+        System.out.println("Menu 3 = Exit");
+        
         while (true) {
-            System.out.print("Masukkan nama : ");
-            nama02 = agung.nextLine();
-            System.out.print("Masukkan baris : ");
-            baris02 = agung.nextInt();
-            System.out.print("Masukkan kolom : ");
-            kolom02 = agung.nextInt();
+            System.out.println();
+            System.out.print("Pilih menu : ");
+            menu02 = agung.nextInt();
             agung.nextLine();
 
-            penonton02[baris02-1][kolom02-1] = nama02;
+            if (menu02 == 1) {
+                String nama02;
+                int baris02;
+                int kolom02;
 
-            System.out.print("Input penonton lainnya? (y/n) : ");
-            next02 = agung.nextLine();
+                System.out.print("Masukkan nama : ");
+                nama02 = agung.nextLine();
+                System.out.print("Masukkan baris : ");
+                baris02 = agung.nextInt();
+                System.out.print("Masukkan kolom : ");
+                kolom02 = agung.nextInt();
+                
+                penonton02[baris02-1][kolom02-1] = nama02;
 
-            if (next02.equalsIgnoreCase("n")) {
+            } else if (menu02 == 2) {
+                System.out.println("==== Daftar Penonton ====");
+                for (int i = 0; i < penonton02.length; i++) {
+                    for (int j = 0; j < penonton02[i].length; j++) {
+                        if (penonton02[i][j] == null) {
+                            System.out.print("\t");
+                        } else {
+                            System.out.print(penonton02[i][j] + "\t");
+                        }
+                    }
+                    System.out.println();
+                }
+            } else if (menu02 == 3) {
                 break;
             }
+
+
         }
     }
 }
