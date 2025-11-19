@@ -9,5 +9,8 @@ public class Numbers02 {
         myNumbers02[1] = new int[3];
         myNumbers02[2] = new int[1];
 
+        for (int i = 0; i < myNumbers02.length; i++) {
+            System.out.println(Arrays.toString(myNumbers02[i]));
+        }
     }
 }
