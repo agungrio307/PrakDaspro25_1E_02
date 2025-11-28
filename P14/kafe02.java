@@ -1,7 +1,13 @@
 package P14;
 
 public class kafe02 {
-    public static void Menu02() {
+    public static void Menu02(String namaPelanggan02, boolean isMember02) {
+        System.out.println("Selamat datang, " + namaPelanggan02 + "!");
+
+        if (isMember02) {
+            System.out.println("Anda adalah member, dapatkan diskon 10% untuk setiap pembelian!");
+        } 
+
         System.out.println("===== MENU RESTO KAFE =====");
         System.out.println("1. Kopi Hitam - Rp 15,000");
         System.out.println("2. Cappucino - Rp 20,000");
@@ -13,6 +19,6 @@ public class kafe02 {
         System.out.println("Silahkan plih menu yang Anda inginkan.");   
     }
     public static void main(String[] args) {
-        Menu02();
+        Menu02("Andi", true);
     }
 }
