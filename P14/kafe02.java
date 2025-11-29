@@ -17,8 +17,6 @@ public class kafe02 {
             System.out.println("Kode promo invalid atau tidak tersedia.");
         }
 
-
-
         System.out.println("===== MENU RESTO KAFE =====");
         System.out.println("1. Kopi Hitam - Rp 15,000");
         System.out.println("2. Cappucino - Rp 20,000");
@@ -30,38 +28,57 @@ public class kafe02 {
         System.out.println("Silahkan plih menu yang Anda inginkan.");
     }
 
-    public static int hitungTotalHarga02(int pilihanMenu02, int banyakItem02, String kodePromo02) {
+    public static int hitungTotalHarga02(int pilihanMenu02, int banyakItem02) {
         int[] hargaItems02 = {15000, 20000, 22000, 12000, 10000, 18000};
         
-        int hargaTotal02 = hargaItems02[pilihanMenu02 - 1] * banyakItem02;
-        int diskon02 = 0;
-
-        if (kodePromo02.equals("DISKON50")) {
-            diskon02 = hargaTotal02 * 50 / 100;
-            System.out.println("Diskon 50%: -Rp " + diskon02);
-        } else if (kodePromo02.equals("DISKON30")) {
-            diskon02 = hargaTotal02 * 30 / 100;
-            System.out.println("Diskon 30%: -Rp " + diskon02);
-        } else {
-            System.out.println("Kode promo invalid, tidak ada diskon.");
-        }
-
-        return hargaTotal02 - diskon02;
+        return hargaItems02[pilihanMenu02 - 1] * banyakItem02;
     }
+    
+    public static int hitungDiskon02(int totalHarga02, String kodePromo02) {
+        int diskon02 = 0;
         
-        public static void main(String[] args) {
-            Scanner agung = new Scanner(System.in);
+        if (kodePromo02.equals("DISKON50")) {
+            diskon02 += totalHarga02 * 50 / 100; 
+        } else if (kodePromo02.equals("DISKON30")) {
+            diskon02 += totalHarga02 * 30 / 100; 
+        }
+        
+        return diskon02;
+    }
+    public static void main(String[] args) {
+        Scanner agung = new Scanner(System.in);
+        
+        Menu02("Andi", true, "DISKON50");
+        // Menu02("Budi", true, "DISKON30");
+        
+        int totalKeseluruhan02 = 0;
+        
+        while (true) {
+            System.out.print("\nMasukkan nomor menu yang ingin Anda pesan (0 untuk berhenti): ");
+            int pilihanMenu02 = agung.nextInt();
 
-            Menu02("Andi", true, "DISKON50");
-            // Menu02("Budi", true, "DISKON30");
-            System.out.print("\nMasukkan nomor menu yang ingin Anda pesan: ");
-            int pilihanMenu02 = agung.nextInt();  
+            if (pilihanMenu02 == 0) { 
+                break;
+            }     
+            
             System.out.print("Masukkan banyak item yang ingin dipesan: ");
             int banyakItem02 = agung.nextInt();
-            System.out.print("Masukkan kode promo: ");
-            String kodePromo02 = agung.next();
-        
-            int totalHarga02 = hitungTotalHarga02(pilihanMenu02, banyakItem02, kodePromo02);
-            System.out.println("Total harga untuk pesanan Anda: Rp " + totalHarga02);
+            
+            int totalSementara02 = hitungTotalHarga02(pilihanMenu02, banyakItem02);
+            totalKeseluruhan02 += totalSementara02;
+   
+            System.out.println("Subtotal menu: Rp " + totalSementara02);
+        }
+
+        System.out.print("Masukkan kode promo: ");
+        String kodePromo02 = agung.next();
+
+        int diskon02 = hitungDiskon02(totalKeseluruhan02, kodePromo02);
+        int totalFinal02 = totalKeseluruhan02 - diskon02;
+
+        System.out.println("total harga sebelum diskon: Rp " + totalKeseluruhan02);
+        System.out.println("Diskon Promo: Rp " + diskon02);
+        System.out.println("Total harga akhir untuk pesanan Anda: Rp " + totalFinal02);
+
         }
     }
