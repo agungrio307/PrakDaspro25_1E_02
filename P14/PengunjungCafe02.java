@@ -4,8 +4,12 @@ public class PengunjungCafe02 {
     public static void daftarPengunjung02(String...namaPengunjung02) {
         System.out.println("Daftar Nama Pengunjung: ");
 
-        for (int i = 0; i < namaPengunjung02.length; i++) {
-            System.out.println("- " + namaPengunjung02[i]);
+        // for (int i = 0; i < namaPengunjung02.length; i++) {
+        //     System.out.println("- " + namaPengunjung02[i]);
+        // }
+
+        for (String nama : namaPengunjung02) {
+            System.out.println("- " + nama);
         }
     }
     public static void main(String[] args) {
